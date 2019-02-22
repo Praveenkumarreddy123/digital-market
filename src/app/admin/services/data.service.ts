@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Product } from '../classes/product';
+import { User } from '../classes/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,5 +31,12 @@ export class DataService {
       'created': CreateProduct.created
     }
     );
+  }
+  public loginUser(username, password) {
+      return  this.http.post<User>(this.WebserviceUrl + '/user/loginUser',
+      {
+        'username': username,
+        'password': password
+      });
   }
 }
