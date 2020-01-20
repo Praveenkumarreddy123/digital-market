@@ -10,7 +10,7 @@ export class User {
     pincode?: string;
     public service: DataService;
     constructor() {
-        console.log(this.service.loginUser(this.username, this.password));
+        // console.log(this.service.loginUser(this.username, this.password));
     }
     login() {
         // this.service.loginUser(this.username, this.password).subscribe((data) => {

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+      <div class="col-10 m-auto">
+        <h3 class="mb-3">Product List</h3>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Sno</th>
+              <th>name</th>
+              <th>description</th>
+              <th>price</th>
+              <th>category_id</th>
+              <th>created</th>
+              <th>active</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productList; let i = index">
+              <td>{{(i+1)}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.category_id}}</td>
+              <td>{{product.created}}</td>
+              <td>{{product.active}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

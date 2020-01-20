@@ -1,0 +1,66 @@
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <form class="form-default mx-auto theme-coral" name="login-form" #loginform="ngForm">   
+            <div class="row">
+                <div class="col-md-12">                                             
+                    <div class="form-logo">
+                        <i class="fab fa-jedi-order" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="form-title">Sign in</h3>
+                </div>
+            </div>                                                                              
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="loginEmail" #loginEmail="ngModel" [(ngModel)]="loginDetails.username" placeholder="User Name" required>
+                        <p class="text-left errorTxt" *ngIf="loginEmail.invalid && isSubmitted">User Name is required*</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="password" class="form-control" #loginPassword="ngModel" name="loginPassword" [(ngModel)]="loginDetails.password" placeholder="Password" required>
+                        <p class="text-left errorTxt" *ngIf="loginPassword.invalid && isSubmitted">Password is required*</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="loginRememberMe" id="loginRememberMe">
+                        <label class="form-check-label" for="loginRememberMe">Remember Me</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" data-target="#modalForgotPassword" data-toggle="modal" data-dismiss="modal" class="form-link">Forgot your password?</a>
+                </div>
+            </div>                          
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-submit" (click)="signIn(loginform)">Sign in</button>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-12">                                                     
+                    <!-- form-social-networks begin -->
+                    <div class="form-social-networks">
+                        <h4 class="form-social-networks-title">Sign in with your account in social networks</h4>
+                        
+                        <ul class="social-networks-list">
+                            <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>                                                  
+                    <!-- form-social-networks end -->
+                </div>
+            </div>                                      
+        </form>
+        </div>
+      </div>
+    </div>
+</div>

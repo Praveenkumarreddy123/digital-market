@@ -1,13 +1,19 @@
 {
   "name": "digital-market",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --watch",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . digital-market --platform=win32 --arch x64 --icon=dist/digital-market/favicon.ico --prune=true --out=Installer/",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "setup": "electron-installer-windows --src Installer/digital-market-win32-x64/ --dest  Installer/installers/"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +31,8 @@
     "chart.js": "2.7.3",
     "core-js": "^2.5.4",
     "datatables.net-bs4": "1.10.19",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-winstaller": "^4.0.0",
     "jquery": "^3.3.1",
     "jquery.easing": "^1.4.1",
     "rxjs": "~6.4.0",
@@ -40,6 +48,10 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "electron": "7.1.9",
+    "electron-installer-windows": "^2.0.0",
+    "electron-packager": "^14.2.0",
+    "electron-wix-msi": "^2.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
