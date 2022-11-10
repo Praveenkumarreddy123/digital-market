@@ -48,7 +48,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
-    "electron": "7.1.9",
+    "electron": "18.3.7",
     "electron-installer-windows": "^2.0.0",
     "electron-packager": "^14.2.0",
     "electron-wix-msi": "^2.2.0",
